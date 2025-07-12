@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html lang="mn">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Оюунсанаа</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        text-align: center;
-        margin-top: 100px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Сайн байна уу, би Оюунсанаа 🤍</h1>
-    <p>Энд удахгүй AI chatbot холбогдох болно...</p>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Оюунсанаа</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fff;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .chatbox {
+      width: 300px;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    button {
+      padding: 10px 15px;
+      background: #e67eaf;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .reply {
+      margin-top: 15px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h2>Сайн байна уу, би Оюунсанаа 🤍</h2>
+  <div class="chatbox">
+    <p>Танд туслахад би энд байна.</p>
+    <button onclick="document.getElementById('reply').innerText='Та яг одоо өөрийгөө ойлгож байгаа нь хамгийн том алхам юм шүү 🤍'">Надад туслаач</button>
+    <p id="reply" class="reply"></p>
+  </div>
+</body>
 </html>
