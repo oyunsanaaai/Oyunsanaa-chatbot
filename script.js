@@ -5,28 +5,22 @@ const button = document.getElementById("send-button");
 button.addEventListener("click", async () => {
   const text = input.value.trim();
   if (!text) return;
+
   chatbox.innerHTML += `<div><strong>Та:</strong> ${text}</div>`;
+  input.value = "";
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch("/api/chat", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Authorization": "Bearer sk-XXXXXXXXXXXXXXXXXXXXXX"
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [{ role: "user", content: text }]
-      }),
+      body: JSON.stringify({ message: text })
     });
 
     const data = await response.json();
-    const reply = data.choices[0].message.content;
-    chatbox.innerHTML += `<div><strong>Oyunsanaa:</strong> ${reply}</div>`;
+    chatbox.innerHTML += `<div><strong>Oyunsanaa:</strong> ${data.reply}</div>`;
   } catch (error) {
-    chatbox.innerHTML += `<div><strong>Алдаа:</strong> ${error.message}</div>`;
+    chatbox.innerHTML += `<div style="color:red"><strong>Алдаа:</strong> Холболт амжилтгүй боллоо.</div>`;
   }
-
-  input.value = "";
-  chatbox.scrollTop = chatbox.scrollHeight;
 });
