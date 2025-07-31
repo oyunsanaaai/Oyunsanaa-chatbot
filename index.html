@@ -3,16 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <title>Oyunsanaa Chatbot</title>
+  <style>
+    #chatbox { width: 300px; height: 200px; border: 1px solid #ccc; overflow-y: auto; }
+  </style>
 </head>
 <body>
-
-  <h1>Oyunsanaa Chatbot</h1>
-
+  <h2>Oyunsanaa Chatbot</h2>
   <input type="text" id="userInput" placeholder="Бичих..." />
-  <button id="sendButton">Илгээх</button>
+  <button id="send-button">Илгээх</button>
+  <div id="chatbox"></div>
 
-  <div id="chatbox" style="margin-top:20px; border:1px solid #ccc; padding:10px; width:300px; height:200px; overflow-y:auto;"></div>
+  <script>
+    const chatbox = document.getElementById("chatbox");
+    const input = document.getElementById("userInput");
+    const button = document.getElementById("send-button");
 
-  <script src="script.js"></script>
+    button.addEventListener("click", () => {
+      const text = input.value.trim();
+      if (!text) return;
+      chatbox.innerHTML += `<div><strong>Та:</strong> ${text}</div>`;
+      // Энд OpenAI API холболт орно
+      chatbox.innerHTML += `<div><strong>Oyunsanaa:</strong> Та "${text}" гэж бичлээ.</div>`;
+      input.value = "";
+      chatbox.scrollTop = chatbox.scrollHeight;
+    });
+  </script>
 </body>
 </html>
