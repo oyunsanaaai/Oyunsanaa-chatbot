@@ -1,46 +1,18 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="UTF-8">
-  <title>Оюунсанаа</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #fff;
-      text-align: center;
-      padding-top: 80px;
-    }
-    .chatbox {
-      width: 320px;
-      margin: 0 auto;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      background: #f9f9f9;
-      box-shadow: 0 0 8px #eee;
-    }
-    button {
-      padding: 10px 15px;
-      background: #e67eaf;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-    .reply {
-      margin-top: 15px;
-      color: #555;
-      font-style: italic;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Oyunsanaa Chatbot</title>
 </head>
 <body>
-  <h2>Сайн байна уу, би Оюунсанаа 🤍</h2>
-  <div class="chatbox">
-    <p>Танд туслахад би энд байна.</p>
-    <button onclick="document.getElementById('reply').innerText='Та яг одоо өөрийгөө ойлгож байгаа нь хамгийн том алхам юм шүү 🤍'">Надад туслаач</button>
-    <p id="reply" class="reply"></p>
-  </div>
+
+  <h1>Oyunsanaa Chatbot</h1>
+
+  <input type="text" id="userInput" placeholder="Бичих..." />
+  <button id="sendButton">Илгээх</button>
+
+  <div id="chatbox" style="margin-top:20px; border:1px solid #ccc; padding:10px; width:300px; height:200px; overflow-y:auto;"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
