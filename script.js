@@ -1,18 +1,32 @@
-const OPENAI_API_KEY = "Таны_API_KEY";
+const chatbox = document.getElementById("chatbox");
+const input = document.getElementById("userInput");
+const button = document.getElementById("send-button");
 
-async function sendMessageToGPT(message) {
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${OPENAI_API_KEY}`
-    },
-    body: JSON.stringify({
-      model: "gpt-4o-mini",
-      messages: [{ role: "user", content: message }]
-    })
-  });
+button.addEventListener("click", async () => {
+  const text = input.value.trim();
+  if (!text) return;
+  chatbox.innerHTML += `<div><strong>Та:</strong> ${text}</div>`;
 
-  const data = await response.json();
-  return data.choices[0].message.content;
-}
+  try {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Authorization": "Bearer sk-XXXXXXXXXXXXXXXXXXXXXX"
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [{ role: "user", content: text }]
+      }),
+    });
+
+    const data = await response.json();
+    const reply = data.choices[0].message.content;
+    chatbox.innerHTML += `<div><strong>Oyunsanaa:</strong> ${reply}</div>`;
+  } catch (error) {
+    chatbox.innerHTML += `<div><strong>Алдаа:</strong> ${error.message}</div>`;
+  }
+
+  input.value = "";
+  chatbox.scrollTop = chatbox.scrollHeight;
+});
