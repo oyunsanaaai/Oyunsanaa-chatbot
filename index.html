@@ -1,32 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="mn">
 <head>
   <meta charset="UTF-8" />
-  <title>Oyunsanaa Chatbot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oyunsanaa – Чатботууд</title>
   <style>
-    #chatbox { width: 300px; height: 200px; border: 1px solid #ccc; overflow-y: auto; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f4f0;
+      padding: 2rem;
+    }
+    h1 {
+      color: #7F4B30;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    a {
+      text-decoration: none;
+      color: #212E40;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <h2>Oyunsanaa Chatbot</h2>
-  <input type="text" id="userInput" placeholder="Бичих..." />
-  <button id="send-button">Илгээх</button>
-  <div id="chatbox"></div>
-
-  <script>
-    const chatbox = document.getElementById("chatbox");
-    const input = document.getElementById("userInput");
-    const button = document.getElementById("send-button");
-
-    button.addEventListener("click", () => {
-      const text = input.value.trim();
-      if (!text) return;
-      chatbox.innerHTML += `<div><strong>Та:</strong> ${text}</div>`;
-      // Энд OpenAI API холболт орно
-      chatbox.innerHTML += `<div><strong>Oyunsanaa:</strong> Та "${text}" гэж бичлээ.</div>`;
-      input.value = "";
-      chatbox.scrollTop = chatbox.scrollHeight;
-    });
-  </script>
+  <h1>Oyunsanaa – Чатботууд</h1>
+  <ul>
+    <li><a href="chatbots/chatbot_0-7_engiin.html">0–7 нас (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_0-7_premium.html">0–7 нас (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_8-12_engiin.html">8–12 нас (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_8-12_premium.html">8–12 нас (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_13-18_engiin.html">13–18 нас (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_13-18_premium.html">13–18 нас (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_19-25_engiin.html">19–25 нас (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_19-25_premium.html">19–25 нас (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_26-40_engiin.html">26–40 нас (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_26-40_premium.html">26–40 нас (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_41-55_engiin.html">41–55 нас (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_41-55_premium.html">41–55 нас (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_56-70_engiin.html">56–70 нас (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_56-70_premium.html">56–70 нас (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_70plus_engiin.html">70+ нас (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_70plus_premium.html">70+ нас (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_bagts_gerbul_engiin.html">Гэр бүл багц (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_bagts_gerbul_premium.html">Гэр бүл багц (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_bagts_ajil_engiin.html">Ажил мэргэжлийн багц (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_bagts_ajil_premium.html">Ажил мэргэжлийн багц (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_bagts_sport_engiin.html">Спорт урлаг багц (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_bagts_sport_premium.html">Спорт урлаг багц (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_angi_engiin.html">Анги хамт олон (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_angi_premium.html">Анги хамт олон (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_baiguullaga_engiin.html">Байгууллага (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_baiguullaga_premium.html">Байгууллага (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_tusgai_engiin.html">Тусгай хэрэгцээт бүлэг (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_tusgai_premium.html">Тусгай хэрэгцээт бүлэг (Премиум)</a></li>
+    <li><a href="chatbots/chatbot_blind_engiin.html">Хараагүй хүн (Энгийн)</a></li>
+    <li><a href="chatbots/chatbot_blind_premium.html">Хараагүй хүн (Премиум)</a></li>
+  </ul>
 </body>
 </html>
